@@ -18,6 +18,7 @@ class _HomeState extends State<Home> {
         backgroundColor: Constant.BACKGROUNDCOLOR,
         title: Text("Munna & Guys"),
       ),
+
       body: Container(
         color: Constant.BACKGROUNDCOLOR,
         // child stack
@@ -35,110 +36,33 @@ class _HomeState extends State<Home> {
                   topRight: Radius.circular(25),
                 ),
               ),
-             child: Container(
-               padding: EdgeInsets.all(10),
-               margin: EdgeInsets.only(left: 10,right: 10,top: 10),
-               height: 60,
-               width: MediaQuery.of(context).size.width,
-               decoration: BoxDecoration(
-                 borderRadius: BorderRadius.all(Radius.circular(15)),
-                 color: Colors.white,
-                 boxShadow: [
-                   BoxShadow(
-                     color: Color(0xFFD4D2D2),
-                     offset: Offset(0.0, 1.0), //(x,y)
-                     blurRadius: 6.0,
+             child: Column(
+               children: [
+                 SizedBox(height: 30,),
+                 Container(
+                 height: 45,
+                 width: 350, //MediaQuery.of(context).size.width,
+                 child: TextField (
+                   decoration: InputDecoration(
+                      filled: true,
+                      prefixIcon: Icon(BootstrapIcons.search),
+                       enabledBorder: OutlineInputBorder(
+                         borderSide: BorderSide(color: Colors.white),
+                         borderRadius: BorderRadius.all(Radius.circular(20)),
+                       ),
+                       focusedBorder: OutlineInputBorder(
+                         borderSide: BorderSide(color: Colors.white),
+                         borderRadius: BorderRadius.all(Radius.circular(20)),
+                       ),
+                       disabledBorder: OutlineInputBorder(
+                         borderSide: BorderSide(color: Colors.white),
+                         borderRadius: BorderRadius.all(Radius.circular(20)),
+                       ),
+                       hintText: 'Search',
                    ),
-                 ],
-               ),
-               child: Stack(
-                 children: [
-                   Align(
-                       alignment: Alignment.centerLeft,
-                       child:
-                       Expanded(
-                         flex: 10,
-                         child:Row(
-                           children: [
-                             SizedBox(width: 10,),
-                             Expanded(
-                               flex: 1,
-                               child: Icon(BootstrapIcons.search,
-                                 color: Constant.PRIMARYCOLOR,
-                               ),
-                             ),
-
-                             Expanded(
-                               flex: 7,
-                               child: TextField(
-                                // controller: _searchQuery,
-
-                                 onChanged: (value)
-                                 {
-                                   setState(() {
-                                     /*if (value.isEmpty) {
-                                    _handleSearchStart();
-                                  } else {
-                                    _handleSearchEnd();
-                                  }*/
-                                   });
-                                 },
-
-                                 textAlign: TextAlign.start,
-                                 style: TextStyle(
-                                     fontSize: 15
-                                 ),
-                                 decoration: new InputDecoration(
-                                   border: InputBorder.none,
-                                   focusedBorder: InputBorder.none,
-                                   enabledBorder: InputBorder.none,
-                                   errorBorder: InputBorder.none,
-                                   disabledBorder: InputBorder.none,
-                                   hintText: "  খুজুন....",
-                                   hintStyle: TextStyle(color: Colors.grey,
-                                       fontSize: 16
-                                   ),
-                                 ),
-                               ),
-
-                             ),
-                             Expanded(
-                                 flex: 2,
-                                 child:Align(
-                                     alignment: Alignment.centerRight,
-                                     child: GestureDetector(
-                                       onTap: (){
-
-                                       },
-                                       child:  Container(
-                                         height: 60,
-                                         width: 60,
-                                         decoration: BoxDecoration(
-                                             border: Border.all(
-                                               color: Color(0xFFFFFFFF),
-                                             ),
-                                             color: Color(0xFFFFFFFF),
-                                             borderRadius: BorderRadius.all(Radius.circular(22))),
-                                         padding: EdgeInsets.all(5),
-                                         child: Center(
-                                           child: Icon(
-                                             BootstrapIcons.filter,
-                                             color: Colors.grey,
-                                           ),
-                                         ),
-                                       ),
-                                     )
-                                 )
-                             ),
-
-                           ],
-                         ),
-                       )
-
-                   ),
-                 ],
-               ),
-             ),
+                 ),
+               ),]
+             )
 
             ),
             // second box
@@ -153,9 +77,8 @@ class _HomeState extends State<Home> {
                 ),
               margin: EdgeInsets.only(top: 100),
               width: MediaQuery.of(context).size.width,
-            ),)
-
-
+              ),
+            ),
           ],
         ),
       ),
