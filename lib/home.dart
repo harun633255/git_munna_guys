@@ -1,6 +1,7 @@
 
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:munnaguys/slider_body.dart';
 
 import 'constant.dart';
 class Home extends StatefulWidget {
@@ -42,28 +43,31 @@ class _HomeState extends State<Home> {
                  Container(
                  height: 45,
                  width: 350, //MediaQuery.of(context).size.width,
-                 child: TextField (
-                   decoration: InputDecoration(
-                      filled: true,
-                      prefixIcon: Icon(BootstrapIcons.search),
-                       enabledBorder: OutlineInputBorder(
-                         borderSide: BorderSide(color: Colors.white),
-                         borderRadius: BorderRadius.all(Radius.circular(20)),
-                       ),
-                       focusedBorder: OutlineInputBorder(
-                         borderSide: BorderSide(color: Colors.white),
-                         borderRadius: BorderRadius.all(Radius.circular(20)),
-                       ),
-                       disabledBorder: OutlineInputBorder(
-                         borderSide: BorderSide(color: Colors.white),
-                         borderRadius: BorderRadius.all(Radius.circular(20)),
-                       ),
-                       hintText: 'Search',
+                 child: Center(
+                   child: TextField (
+                     textAlignVertical: TextAlignVertical.center,
+                     decoration: InputDecoration(
+                        filled: true,
+                        prefixIcon: Icon(BootstrapIcons.search),
+                         enabledBorder: OutlineInputBorder(
+                           borderSide: BorderSide(color: Colors.white),
+                           borderRadius: BorderRadius.all(Radius.circular(20)),
+                         ),
+                         focusedBorder: OutlineInputBorder(
+                           borderSide: BorderSide(color: Colors.white),
+                           borderRadius: BorderRadius.all(Radius.circular(20)),
+                         ),
+                         disabledBorder: OutlineInputBorder(
+                           borderSide: BorderSide(color: Colors.white),
+                           borderRadius: BorderRadius.all(Radius.circular(20)),
+                         ),
+                         hintText: 'Search',
+                     ),
                    ),
                  ),
-               ),]
-             )
-
+                ),
+               ]
+              ),
             ),
             // second box
             Expanded(
@@ -77,6 +81,39 @@ class _HomeState extends State<Home> {
                 ),
               margin: EdgeInsets.only(top: 100),
               width: MediaQuery.of(context).size.width,
+                child: Container(
+                  margin: EdgeInsets.only(top: 20, left: 30, right: 30),
+                  child:Column(
+                    children: [
+                      Row(
+                        children:[
+                          SizedBox(width: 10,),
+                          Text("Popular Services",style: TextStyle(fontSize: 20,color: Colors.orange),),
+                          //Spacer(),
+                          SizedBox(width:60,),
+                          TextButton(
+                            onPressed: (){},
+                            child: Text("View All",style: TextStyle(fontSize: 20,)),
+                          ),
+                        ]
+                      ),
+                      SizedBox(height: 10,),
+                      SliderBody(),
+                      // Container(
+                      //   height: 170,
+                      //   width: 350,
+                      //   decoration: BoxDecoration(
+                      //     borderRadius: BorderRadius.circular(20),
+                      //     image: DecorationImage(
+                      //       image: AssetImage("assets/images/logo.png",),
+                      //       fit: BoxFit.cover,
+                      //     ),
+                      //      color: Colors.orange,
+                      //   ),
+                      // )
+                    ],
+                  )
+                ),
               ),
             ),
           ],
