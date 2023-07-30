@@ -1,9 +1,8 @@
-
 import 'package:bootstrap_icons/bootstrap_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:munnaguys/slider_body.dart';
-
 import 'constant.dart';
+
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -17,7 +16,23 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Constant.BACKGROUNDCOLOR,
-        title: Text("Munna & Guys"),
+        title:Row(
+          children: [
+            Row(
+              children: [
+                Icon(BootstrapIcons.person),
+                SizedBox(width: 10,),
+                Text("Abu Bokor Siddik"),
+              ],
+            ),
+            Spacer(),
+            Row(
+              children: [
+                Icon(BootstrapIcons.bell),
+              ],
+            ),
+          ],
+        ) //Text("Munna & Guys"),
       ),
 
       body: Container(
