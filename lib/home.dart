@@ -15,28 +15,32 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Constant.BACKGROUNDCOLOR,
-        title:Row(
-          children: [
-            Row(
-              children: [
-                Icon(BootstrapIcons.person),
-                SizedBox(width: 10,),
-                Text("Abu Bokor Siddik"),
-              ],
-            ),
-            Spacer(),
-            Row(
-              children: [
-                Icon(BootstrapIcons.bell),
-              ],
-            ),
-          ],
+        backgroundColor: Constant.SecondColor,
+        title:
+        Container(
+          margin: EdgeInsets.only(bottom: 20,top: 10),
+          child:  Row(
+            children: [
+              Row(
+                children: [
+                  Icon(BootstrapIcons.person_circle,color: Colors.grey,size: 35,),
+                  SizedBox(width: 10,),
+                  Text("Abu Bokor Siddik",style: TextStyle(color: Colors.black,fontSize: 20),),
+                ],
+              ),
+              Spacer(),
+              Row(
+                children: [
+                  Icon(Icons.circle_notifications_outlined,color: Colors.grey,size: 35,),
+                ],
+              ),
+            ],
+          ),
         ) //Text("Munna & Guys"),
       ),
 
       body: Container(
-        color: Constant.BACKGROUNDCOLOR,
+        color: Constant.SecondColor,
         // child stack
         child: Stack(
           children: [
@@ -56,25 +60,29 @@ class _HomeState extends State<Home> {
                children: [
                  SizedBox(height: 30,),
                  Container(
-                 height: 45,
+                 height:55,
                  width: 350, //MediaQuery.of(context).size.width,
+                 margin: EdgeInsets.only(bottom: 15),
                  child: Center(
                    child: TextField (
                      textAlignVertical: TextAlignVertical.center,
+                     //background color white
+
                      decoration: InputDecoration(
                         filled: true,
-                        prefixIcon: Icon(BootstrapIcons.search),
+                        fillColor: Colors.white,
+                        prefixIcon: Icon(BootstrapIcons.search,size: 25,),
                          enabledBorder: OutlineInputBorder(
                            borderSide: BorderSide(color: Colors.white),
-                           borderRadius: BorderRadius.all(Radius.circular(20)),
+                           borderRadius: BorderRadius.all(Radius.circular(25)),
                          ),
                          focusedBorder: OutlineInputBorder(
                            borderSide: BorderSide(color: Colors.white),
-                           borderRadius: BorderRadius.all(Radius.circular(20)),
+                           borderRadius: BorderRadius.all(Radius.circular(25)),
                          ),
                          disabledBorder: OutlineInputBorder(
                            borderSide: BorderSide(color: Colors.white),
-                           borderRadius: BorderRadius.all(Radius.circular(20)),
+                           borderRadius: BorderRadius.all(Radius.circular(25)),
                          ),
                          hintText: 'Search',
                      ),
