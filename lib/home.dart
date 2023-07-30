@@ -82,10 +82,11 @@ class _HomeState extends State<Home> {
               margin: EdgeInsets.only(top: 100),
               width: MediaQuery.of(context).size.width,
                 child: Container(
-                  margin: EdgeInsets.only(top: 20, left: 30, right: 30),
+                 // margin: EdgeInsets.only(top: 20, left: 30, right: 30),
                   child:Column(
                     children: [
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children:[
                           SizedBox(width: 10,),
                           Text("Popular Services",style: TextStyle(fontSize: 20,color: Colors.orange),),
@@ -93,12 +94,76 @@ class _HomeState extends State<Home> {
                           SizedBox(width:60,),
                           TextButton(
                             onPressed: (){},
-                            child: Text("View All",style: TextStyle(fontSize: 20,)),
+                            child: Text("View All",style: TextStyle(fontSize: 16,fontWeight: FontWeight.normal,color:Colors.grey)),
                           ),
                         ]
                       ),
                       SizedBox(height: 10,),
                       SliderBody(),
+                      Container(
+                        height: 50,
+                        width: MediaQuery.of(context).size.width,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Text("What are you looking for?",style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Constant.PRIMARYCOLOR,
+                            ),),
+                            Text("View All",style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.normal,
+                              color: Colors.grey,
+                            ),),
+                          ],
+                        ),
+
+                      ),
+                      SizedBox(height: 10,),
+                      Container(
+                          margin: EdgeInsets.symmetric(vertical: 20.0),
+                          height: 100.0,
+                          child: new ListView(
+                            scrollDirection: Axis.horizontal,
+                            children: <Widget>[
+                              CircleAvatar(
+                                  backgroundColor: Colors.grey,
+                                  radius: 72,
+                                  child: Container(
+                                    padding: EdgeInsets.all(10),
+                                    child: Image.asset("assets/images/logo.png"),
+                                  )
+                              ),
+                              CircleAvatar(
+                                  backgroundColor: Colors.grey,
+                                  radius: 72,
+                                  child: Container(
+                                    padding: EdgeInsets.all(10),
+                                    child: Image.asset("assets/images/logo.png"),
+                                  )
+                              ),
+                              CircleAvatar(
+                                  backgroundColor: Colors.grey,
+                                  radius: 72,
+                                  child: Container(
+                                    padding: EdgeInsets.all(10),
+                                    child: Image.asset("assets/images/logo.png"),
+                                  )
+                              ),
+                              CircleAvatar(
+                                  backgroundColor: Colors.grey,
+                                  radius: 72,
+                                  child: Container(
+                                    padding: EdgeInsets.all(10),
+                                    child: Image.asset("assets/images/logo.png"),
+                                  )
+                              ),
+
+                            ],
+                          )
+                      )
+
                       // Container(
                       //   height: 170,
                       //   width: 350,
