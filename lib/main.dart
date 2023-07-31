@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:munnaguys/select_date_time.dart';
+import 'package:munnaguys/select_services.dart';
 import 'package:munnaguys/splashscreen.dart';
 
 import 'home.dart';
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  Home(),
+      home:  SelectServices(),
     );
   }
 }

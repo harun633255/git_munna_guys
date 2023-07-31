@@ -23,25 +23,19 @@ class _SliderBodyState extends State<SliderBody> {
   Widget build(BuildContext context) {
     final List<Widget> imageSliders = widget.imgList.map((item) =>
         Container(
+          height: 50,
           child: ClipRRect(
             borderRadius: BorderRadius.all(Radius.circular(10)),
             child: Stack(
               children: [
-                Image.asset(item,fit: BoxFit.cover,width: 350,),
+                Image.asset(item,fit: BoxFit.cover,width: 250,),
                 Positioned(
                     bottom: 0.0,
                     left: 0.0,
                     right: 0.0,
                     child: Container(
                       decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            Color.fromARGB(70,0,0,0),
-                            Color.fromARGB(0,0,0,0),
-                          ],
-                          begin: Alignment.bottomCenter,
-                          end: Alignment.topCenter,
-                        ),
+
                       ),
                       padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                     )
@@ -52,9 +46,6 @@ class _SliderBodyState extends State<SliderBody> {
         )).toList();
     return Column(
       children: [
-        Padding(
-          padding: EdgeInsets.all(15),
-        ),
         CarouselSlider(
           items: imageSliders,
           options: CarouselOptions(
@@ -69,7 +60,7 @@ class _SliderBodyState extends State<SliderBody> {
               }
           ),
         ),
-        SizedBox(height: 10,),
+       // SizedBox(height: 10,),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: widget.imgList.map((data) {

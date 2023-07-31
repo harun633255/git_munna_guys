@@ -38,6 +38,7 @@ dependencies:
   easy_splash_screen: ^1.0.4
   bootstrap_icons: ^1.9.1
   carousel_slider: ^4.2.1
+  
 
 dev_dependencies:
   flutter_test:
